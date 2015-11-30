@@ -1,2 +1,6 @@
 #!/bin/bash
-git push origin src && git subtree push --prefix dist origin gh-pages
+set -e
+grunt build
+git push origin src
+grunt gh-pages
+rm -rf .grunt
